@@ -11,7 +11,7 @@ System.register(["angular2/platform/browser", "angular2/core"], function(exports
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var browser_1, core_1;
-    var HelloWorld;
+    var HelloWorld, UserPanel;
     return {
         setters:[
             function (browser_1_1) {
@@ -27,14 +27,27 @@ System.register(["angular2/platform/browser", "angular2/core"], function(exports
                 HelloWorld = __decorate([
                     core_1.Component({
                         selector: 'hello-world',
-                        template: "\n <div>\n Hello world\n </div>\n "
+                        template: "\n <div>\n Hello world Ashish\n\n </div>\n "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HelloWorld);
                 return HelloWorld;
             }());
+            UserPanel = (function () {
+                function UserPanel() {
+                }
+                UserPanel = __decorate([
+                    core_1.Component({
+                        selector: 'user-panel',
+                        template: "\n  <div class=\"user-panel\">\n        <div class=\"pull-left image\">\n          <img src=\"dist/img/user2-160x160.jpg\" class=\"img-circle\" alt=\"User Image\">\n        </div>\n        <div class=\"pull-left info\">\n          <p>Alexander Pierce</p>\n          <!-- Status -->\n          <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>\n        </div>\n      </div>\n "
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], UserPanel);
+                return UserPanel;
+            }());
             browser_1.bootstrap(HelloWorld);
         }
     }
 });
+// bootstrap(UserPanel); 
 //# sourceMappingURL=app.js.map
