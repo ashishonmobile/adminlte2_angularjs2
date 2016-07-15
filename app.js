@@ -11,7 +11,7 @@ System.register(["angular2/platform/browser", "angular2/core"], function(exports
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var browser_1, core_1;
-    var HelloWorld, UserPanel, SearchForm, SidebarMenu;
+    var HelloWorld, UserPanel, SearchForm, SidebarMenu, ContentHeader, Content, MainFooter, ControlSidebarHome, ControlSidebarStats, ControlSidebarSettings;
     return {
         setters:[
             function (browser_1_1) {
@@ -27,7 +27,7 @@ System.register(["angular2/platform/browser", "angular2/core"], function(exports
                 HelloWorld = __decorate([
                     core_1.Component({
                         selector: 'hello-world',
-                        template: "\n <div>\n Hello world Ashish\n\n </div>\n "
+                        template: "\n <div>\n Hello world Ashish\n </div>\n "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HelloWorld);
@@ -59,7 +59,7 @@ System.register(["angular2/platform/browser", "angular2/core"], function(exports
                 ], SearchForm);
                 return SearchForm;
             }());
-            //--- Search Form for side bar ---//
+            //--- Sidebar Menu for side bar ---//
             SidebarMenu = (function () {
                 function SidebarMenu() {
                 }
@@ -72,11 +72,95 @@ System.register(["angular2/platform/browser", "angular2/core"], function(exports
                 ], SidebarMenu);
                 return SidebarMenu;
             }());
+            //--- Content Header ---//
+            ContentHeader = (function () {
+                function ContentHeader() {
+                }
+                ContentHeader = __decorate([
+                    core_1.Component({
+                        selector: 'content-header',
+                        template: "\n    <section class=\"content-header\">\n        <h1>\n          Page Header\n          <small>Optional description</small>\n        </h1>\n        <ol class=\"breadcrumb\">\n          <li><a href=\"#\"><i class=\"fa fa-dashboard\"></i> Level</a></li>\n          <li class=\"active\">Here</li>\n        </ol>\n      </section>\n "
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], ContentHeader);
+                return ContentHeader;
+            }());
+            //--- Content  ---//
+            Content = (function () {
+                function Content() {
+                }
+                Content = __decorate([
+                    core_1.Component({
+                        selector: 'content',
+                        directives: [HelloWorld],
+                        template: "\n   <section class=\"content\">\n\n        <!-- Your Page Content Here -->\n        <hello-world></hello-world>\n      </section>\n "
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], Content);
+                return Content;
+            }());
+            //--- Main Footer  ---//
+            MainFooter = (function () {
+                function MainFooter() {
+                }
+                MainFooter = __decorate([
+                    core_1.Component({
+                        selector: 'main-footer',
+                        directives: [HelloWorld],
+                        template: "\n    <footer class=\"main-footer\">\n      <!-- To the right -->\n      <div class=\"pull-right hidden-xs\">\n        Anything you want\n      </div>\n      <!-- Default to the left -->\n      <strong>Copyright &copy; 2016 <a href=\"#\">Company</a>.</strong> All rights reserved.\n    </footer>\n "
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], MainFooter);
+                return MainFooter;
+            }());
+            //--- Control Sidebar Home  ---//
+            ControlSidebarHome = (function () {
+                function ControlSidebarHome() {
+                }
+                ControlSidebarHome = __decorate([
+                    core_1.Component({
+                        selector: 'control-sidebar-home',
+                        template: "\n     <div class=\"tab-pane active\" id=\"control-sidebar-home-tab\">\n          <h3 class=\"control-sidebar-heading\">Recent Activity</h3>\n          <ul class=\"control-sidebar-menu\">\n            <li>\n              <a href=\"javascript::;\">\n                <i class=\"menu-icon fa fa-birthday-cake bg-red\"></i>\n\n                <div class=\"menu-info\">\n                  <h4 class=\"control-sidebar-subheading\">Langdon's Birthday</h4>\n\n                  <p>Will be 23 on April 24th</p>\n                </div>\n              </a>\n            </li>\n          </ul>\n          <!-- /.control-sidebar-menu -->\n\n          <h3 class=\"control-sidebar-heading\">Tasks Progress</h3>\n          <ul class=\"control-sidebar-menu\">\n            <li>\n              <a href=\"javascript::;\">\n                <h4 class=\"control-sidebar-subheading\">\n                  Custom Template Design\n                  <span class=\"pull-right-container\">\n                  <span class=\"label label-danger pull-right\">70%</span>\n                  </span>\n                </h4>\n\n                <div class=\"progress progress-xxs\">\n                  <div class=\"progress-bar progress-bar-danger\" style=\"width: 70%\"></div>\n                </div>\n              </a>\n            </li>\n          </ul>\n          <!-- /.control-sidebar-menu -->\n\n        </div>\n "
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], ControlSidebarHome);
+                return ControlSidebarHome;
+            }());
+            ControlSidebarStats = (function () {
+                function ControlSidebarStats() {
+                }
+                ControlSidebarStats = __decorate([
+                    core_1.Component({
+                        selector: 'control-sidebar-stats',
+                        template: "\n      <div class=\"tab-pane\" id=\"control-sidebar-stats-tab\">Stats Tab Content</div>\n "
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], ControlSidebarStats);
+                return ControlSidebarStats;
+            }());
+            ControlSidebarSettings = (function () {
+                function ControlSidebarSettings() {
+                }
+                ControlSidebarSettings = __decorate([
+                    core_1.Component({
+                        selector: 'control-sidebar-settings',
+                        template: "\n       <div class=\"tab-pane\" id=\"control-sidebar-settings-tab\">\n          <form method=\"post\">\n            <h3 class=\"control-sidebar-heading\">General Settings</h3>\n\n            <div class=\"form-group\">\n              <label class=\"control-sidebar-subheading\">\n              Report panel usage\n              <input type=\"checkbox\" class=\"pull-right\" checked>\n            </label>\n\n              <p>\n                Some information about this general settings option\n              </p>\n            </div>\n            <!-- /.form-group -->\n          </form>\n        </div>\n "
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], ControlSidebarSettings);
+                return ControlSidebarSettings;
+            }());
             //need to bootstrapp all component which we want to display
-            browser_1.bootstrap(HelloWorld);
+            //bootstrap(HelloWorld);
             browser_1.bootstrap(UserPanel);
             browser_1.bootstrap(SearchForm);
             browser_1.bootstrap(SidebarMenu);
+            browser_1.bootstrap(ContentHeader);
+            browser_1.bootstrap(Content);
+            browser_1.bootstrap(MainFooter);
+            browser_1.bootstrap(ControlSidebarHome);
+            //bootstrap(ControlSidebarStats);
+            browser_1.bootstrap(ControlSidebarSettings);
         }
     }
 });
